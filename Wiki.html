@@ -1,0 +1,53 @@
+
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>
+
+<input id='sinput'></input><button id='go'><button id='search'></button>
+
+<script>
+var inp=document.getElementById('sinput');
+
+
+inp.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("go").click();
+  }
+});
+
+
+
+var btn=document.getElementById('search');
+var btng=document.getElementById('go');
+btn.innerHTML='search';
+btng.innerHTML='go';
+btn.onclick=function(){searchW();};
+btng.onclick=function(){searchG();};
+function searchW(){
+
+var sites=' site:wikipedia.org OR site:fandom.com OR site:uesp.net OR site:wikimedia.org OR site:wikivoyage.org OR site:wiktionary.org OR site:wikibooks.org OR site:wikispecies.org OR site:wikidata.org OR site:wikinews.org OR site:wikiversity.org OR site:wikiquote.org OR site:wikisource.org OR site:mediawiki.org OR site:psychonautwiki.org OR site:bulbagarden.net OR site:citizendium.org OR site:gamepedia.com OR site:aboutus.com';
+var inp=document.getElementById('sinput');
+
+window.location.href='https://www.google.com/search?q='+inp.value+sites;
+
+
+
+}
+
+function searchG(){
+
+var sites=' site:wikipedia.org OR site:fandom.com OR site:uesp.net OR site:wikimedia.org OR site:wikivoyage.org OR site:wiktionary.org OR site:wikibooks.org OR site:wikispecies.org OR site:wikidata.org OR site:wikinews.org OR site:wikiversity.org OR site:wikiquote.org OR site:wikisource.org OR site:mediawiki.org OR site:psychonautwiki.org OR site:bulbagarden.net OR site:citizendium.org OR site:gamepedia.com OR site:aboutus.com';
+var inp=document.getElementById('sinput');
+
+window.location.href='https://www.google.com/search?btnI=I&q='+inp.value+sites;
+
+
+
+}
+
+</script>
+
+</body></html>
