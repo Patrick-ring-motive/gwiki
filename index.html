@@ -18,6 +18,19 @@
   <tr><td><input id='sinput'></input></td><td><button id='go'></td><td><button id='search'></button></td></tr>
   </table>
 <script>
+  var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       console.log(xhttp.responseText);
+      afterList();
+    }
+};
+xhttp.open("GET", "wikilist.txt", true);
+xhttp.send();
+  
+  function afterList(){
+  
 var inp=document.getElementById('sinput');
 
 
@@ -39,6 +52,11 @@ btn.innerHTML='search';
 btng.innerHTML='go';
 btn.onclick=function(){searchW();};
 btng.onclick=function(){searchG();};
+    
+  }
+  
+  
+  
 function searchW(){
 
 var sites=' site:wikipedia.org OR site:fandom.com OR site:uesp.net OR site:wikimedia.org OR site:wikivoyage.org OR site:wiktionary.org OR site:wikibooks.org OR site:wikispecies.org OR site:wikidata.org OR site:wikinews.org OR site:wikiversity.org OR site:wikiquote.org OR site:wikisource.org OR site:mediawiki.org OR site:psychonautwiki.org OR site:bulbagarden.net OR site:citizendium.org OR site:gamepedia.com OR site:aboutus.com';
